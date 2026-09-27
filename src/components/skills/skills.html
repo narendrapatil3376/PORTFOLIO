@@ -1,0 +1,87 @@
+@if (loading) {
+
+  <div class="state-message">
+    Loading skills...
+  </div>
+
+}
+
+
+@if (error) {
+
+  <div class="state-message">
+    Couldn't load skills.
+  </div>
+
+}
+
+
+@if (!loading && !error) {
+
+  <section
+    class="skills-section"
+    id="skills">
+
+    <div class="container">
+
+      <h2 class="section-title">
+
+        <span class="text-white">
+          Technical
+        </span>
+
+        <span class="text-accent">
+          Skills Matrix
+        </span>
+
+      </h2>
+
+
+      <div class="skills-grid">
+
+        @for (
+          category of categories;
+          track $index
+        ) {
+
+          <div class="skill-card">
+
+            <div class="skill-card-header">
+
+              <h3>
+                {{ category.title }}
+              </h3>
+
+              <span class="skill-card-icon">
+                {{ iconFor(category.icon) }}
+              </span>
+
+            </div>
+
+
+            <div class="skill-tags">
+
+              @for (
+                skill of category.skills;
+                track $index
+              ) {
+
+                <span class="tag">
+                  {{ skill.name }}
+                </span>
+
+              }
+
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+}

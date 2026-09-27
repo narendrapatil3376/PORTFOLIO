@@ -1,0 +1,46 @@
+.about-section {
+  padding: 100px 20px;
+  min-height: 70vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.text-white {
+  margin-right: 10px;
+}
+
+.text-accent {
+  color: #00ff99;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-content h2 {
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-section {
+  min-height: 100%;
+  padding: 100px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

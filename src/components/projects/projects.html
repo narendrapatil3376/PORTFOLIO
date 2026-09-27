@@ -1,0 +1,101 @@
+@if (loading) {
+
+  <div class="state-message">
+
+    Loading projects...
+
+  </div>
+
+}
+
+
+@if (error) {
+
+  <div class="state-message">
+
+    Couldn't load projects.
+
+  </div>
+
+}
+
+
+@if (!loading && !error) {
+
+  <section
+    class="projects-section"
+    id="projects">
+
+    <div class="container">
+
+      <h2 class="section-title">
+
+        <span class="text-white">
+          Featured Innovations
+        </span>
+
+        <span class="text-accent">
+          &amp; Projects
+        </span>
+
+      </h2>
+
+
+      <div class="projects-grid">
+
+        @for (
+          project of projects;
+          track $index
+        ) {
+
+          <div class="project-card">
+
+            <div class="project-icon">
+
+              {{ iconFor(project.icon) }}
+
+            </div>
+
+
+            <h3>
+
+              {{ project.title }}
+
+            </h3>
+
+
+            <p class="project-desc">
+
+              {{ project.description }}
+
+            </p>
+
+
+            <div class="project-tags">
+
+              @for (
+                tag of project.tags;
+                track $index
+              ) {
+
+                <span class="tag">
+
+                  {{ tag }}
+
+                </span>
+
+              }
+
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+}

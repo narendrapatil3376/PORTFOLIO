@@ -1,0 +1,87 @@
+@if (loading) {
+
+  <div class="state-message">
+    Loading portfolio...
+  </div>
+
+}
+
+@if (error) {
+
+  <div class="state-message">
+    Couldn't reach the portfolio API.
+  </div>
+
+}
+
+@if (!loading && !error) {
+
+  <main>
+
+    <!-- HERO -->
+
+    <section id="portfolio">
+
+      <app-hero
+        [profile]="profile!"
+        [stats]="heroStats">
+      </app-hero>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+ 
+
+
+    <!-- EXPERIENCE -->
+
+    <!-- <section
+      id="experience"
+      class="page-section">
+
+      <div class="container">
+
+        <h2>
+          Experience
+        </h2>
+
+        <p>
+          3.7+ years of backend development
+          experience using Java, Spring Boot,
+          PostgreSQL, REST APIs and microservices.
+        </p>
+
+      </div>
+
+    </section> -->
+
+
+    <!-- CONTACT -->
+
+    <!-- <section
+      id="contact"
+      class="page-section">
+
+      <div class="container">
+
+        <h2>
+          Contact
+        </h2>
+
+        <p>
+          Email: narendra909661@gmail.com
+        </p>
+
+        <p>
+          Phone: +91 70201 49928
+        </p>
+
+      </div>
+
+    </section> -->
+
+  </main>
+
+}

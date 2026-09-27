@@ -1,0 +1,96 @@
+<section class="hero">
+
+  <div class="container hero-inner">
+
+    <!-- NAME + TITLE -->
+
+    <h1 class="hero-title">
+
+      <span class="hero-name">
+        {{ profile?.name | uppercase }}
+      </span>
+
+      <span class="hero-dash">
+        -
+      </span>
+
+      <span class="hero-role">
+        {{ profile?.title }}
+      </span>
+
+    </h1>
+
+
+    <!-- STAT CARDS -->
+
+    <div class="stat-grid">
+
+      @for (
+        stat of stats;
+        track $index
+      ) {
+
+        <div class="stat-card">
+
+          <div class="stat-icon">
+
+            {{
+              stat.icon === 'calendar'
+                ? '📅'
+                : stat.icon === 'mobile'
+                  ? '📱'
+                  : stat.icon === 'network'
+                    ? '🖧'
+                    : stat.icon === 'database'
+                      ? '🗄️'
+                      : '✨'
+            }}
+
+          </div>
+
+          <div class="stat-value">
+
+            {{ stat.value }}
+
+          </div>
+
+          <div class="stat-label">
+
+            {{ stat.label }}
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+
+    <!-- BUTTONS -->
+
+    <div class="hero-actions">
+
+      <button
+        class="btn btn-primary"
+        (click)="exploreProjects()">
+
+        Explore My Projects
+
+      </button>
+
+
+      <a
+        class="btn btn-outline"
+        [href]="profile?.resumeUrl"
+        target="_blank">
+
+        Download Resume
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
